@@ -10,6 +10,7 @@ router.get('/todos', (req, res, next) => {
     .catch(next);
 });
 
+
 router.post('/todos', (req, res, next) => {
   // post placeholder
   if (req.body.action) {
@@ -23,11 +24,14 @@ router.post('/todos', (req, res, next) => {
   }
 });
 
+
 router.delete('/todos/:id', (req, res, next) => {
   // delete placeholder
   Todo.findOneAndDelete({ _id: req.params.id })
   .then((data) => res.json(data))
   .catch(next);
 });
+
+
 
 module.exports = router;
