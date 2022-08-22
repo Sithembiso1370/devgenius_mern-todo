@@ -19,7 +19,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 
-// Connect to the database
+// Connect to the database using the dotenv db string
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
